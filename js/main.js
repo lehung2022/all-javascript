@@ -1,3 +1,3 @@
 const myVariable = "Le Hung";
-
-console.log(myVariable.indexOf("Hung"));
+// Find the last occurence of "Le Hung", starting starting at position 10
+console.log(myVariable.lastIndexOf("Hung", 10));
