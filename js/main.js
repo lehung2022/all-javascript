@@ -1,0 +1,1 @@
+const myVariable = "Le Hung";
