@@ -1,9 +1,3 @@
-const time = new Date().getHours();
-let greeting;
-if (time < 10) {
-  greeting = "Good morning";
-} else if (time < 20) {
-  greeting = "Good day";
-} else {
-  greeting = "Good evening";
-}
+console.log(Math.floor(Math.random()*10) + 1);
+console.log(Math.ceil(Math.random()*10) + 1);
+console.log(Math.ceil(Math.random()*10));
