@@ -1,6 +1,9 @@
-const myVariable = "Le Hung";
-// Find the last occurence of "Le Hung", starting starting at position 10
-console.log(myVariable.slice(3, 5));
-console.log(myVariable.split(","));
-console.log(myVariable.split(""));
-console.log(myVariable.split(" "));
+const time = new Date().getHours();
+let greeting;
+if (time < 10) {
+  greeting = "Good morning";
+} else if (time < 20) {
+  greeting = "Good day";
+} else {
+  greeting = "Good evening";
+}
