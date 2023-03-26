@@ -6,11 +6,13 @@
 const myName = "黎興獨行道烈火拳逆鱗拳烈火真拳"
 function generateMyName() {  
     
-    return myName[Math.floor(Math.random() * myName.length)]
+    // return myName[Math.floor(Math.random() * myName.length)];
+    return myName;
 }
 
-console.log(generateMyName());
-
+console.log(myName.charAt(Math.floor(Math.random() * myName.length)));
+// console.log(generateMyName());
+console.log(typeof myName);
 // Dave's solution is here
 const hisName = "Le Hung"; 
 console.log(typeof hisName);
