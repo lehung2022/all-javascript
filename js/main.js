@@ -1,39 +1,12 @@
-let player = "scissors";
-let computer = "paper";
+const score = [60, 70, 80];
 
-switch (player) {
-    case computer:
-        console.log("It is a tie game!")
-        break;
-    case "rock":
-        if (computer === "paper") {
-            console.log("computer wins")
-        } else if (computer === "scissors") {
-            console.log("player wins")
-        } else {
-            console.log("it is a tie game!")
-        }
-        break;
-    case "paper":
-        if (computer === "paper") {
-            console.log("It is a tie game")
-        } else if (computer === "scissors") {
-            console.log("player wins")
-        } else {
-            console.log("computer wins")
-        }
-        break;
-    case "scissors":
-        if (computer === "rock") {
-            console.log("computer wins")
-        } else if (computer === "paper") {
-            console.log("player wins")
-        } else if (conputer === "scissor") {
-            console.log("It is a tie game")
-        }
 
-        break;
+const scoreRating =
+  score > 70
+    ? "Excellent"
+    : score > 50
+    ? "Average"
+    : "Do better"
 
-    default:
-        break;
-}
+console.log(scoreRating)
+// "Average"
