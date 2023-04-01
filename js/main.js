@@ -1,12 +1,8 @@
-const score = [60, 70, 80];
-
-
-const scoreRating =
-  score > 70
-    ? "Excellent"
-    : score > 50
-    ? "Average"
-    : "Do better"
-
-console.log(scoreRating)
-// "Average"
+let myName = prompt("Please enter your name");
+if (myName) {
+  console.log(myName.trim());
+  console.log(myName.length);
+  console.log(myName.trim().length);
+} else {
+  console.log("You did not enter your name");
+}
