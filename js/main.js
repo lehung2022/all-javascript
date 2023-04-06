@@ -1,81 +1,37 @@
-const options = document.querySelectorAll(".options");
-let pScore = 0;
-let cScore = 0;
-
-options.forEach((option) => {
-  option.addEventListener("click", function () {
-    const pInput = this.value;
-
-    const cOptions = ["Rock", "Paper", "Scissors"];
-    const cInput = cOptions[Math.floor(Math.random() * 3)];
-
-    updateMoves(pInput, cInput);
-    compareInputs(pInput, cInput);
-    updateScore();
-    if (checkWinner()) {
-      pScore = cScore = 0;
-      updateScore();
-    }
-  });
-});
-
-function updateMoves(pInput, cInput) {
-  document.getElementById("p-move").src = `./images/${pInput}.svg`;
-  document.getElementById("c-move").src = `./images/${cInput}.svg`;
-}
-
-
-function compareInputs(pInput, cInput) {
-  const currentMatch = `${pInput} vs ${cInput}`;
-  if (pInput === cInput) {
-    alert(`${currentMatch} is a Tie`);
-    return;
-  }
-
-  if (pInput === "Rock") {
-    if (cInput === "Scissors") {
-      alert(`${currentMatch} = You Win`);
-      pScore++;
+//#1 User Input: Play game
+let playGame = confirm("shall we play the game");
+//#2 Check the value and respond
+if (playGame) {
+  //#3 Player chooses rock, paper, or scissors
+  let playerChoice = prompt("please enter rock, paper, or scissors");
+  //#4 Handle the response
+  if (playerChoice) {
+    let playerOne = playerChoice.trim().toLowerCase();
+    if (playerOne === "rock" || playerOne === "paper" || playerOne === "scissors") {
+      //#5 Computer player makes a choice
+      let computerChoice = Math.floor(Math.random() * 3 + 1);
+      let computer = computerChoice === 1 ? "rock" : computerChoice === 2 ? "paper" : "scissors";
+      //#6 Rock-Paper-Scissors logic tree
+      let result =
+        playerOne === computer
+          ? "tie game"
+          : playerOne === "rock" && computer === "paper"
+            ? `playerOne: ${playerOne}\nComputer: ${computer}\nComputer wins`
+            : playerOne === "paper" && computer === "scissors"
+              ? `playerOne: ${playerOne}\nComputer: ${computer}\nComputer wins`
+              : playerOne === "scissors" && computer === "rock"
+                ? `playerOne: ${playerOne}\nComputer: ${computer}\nComputer wins`
+                : `playerOne: ${playerOne}\nComputer: ${computer}\nplayerOne wins`
+      alert(result);
+      //#7 Display winner! Ask to play again
+      let playAgain = confirm("Play Again????");
+      playAgain ? location.reload() : alert("Ok, thank you for playing");
     } else {
-      alert(`${currentMatch} = Computer Wins`);
-      cScore++;
+      alert("you did not enter anything, my man");
     }
+  } else {
+    alert("I guess you changed your mind")
   }
-  //Check for Paper
-  else if (pInput === "Paper") {
-    if (cInput === "Rock") {
-      alert(`${currentMatch} = You Win`);
-      pScore++;
-    } else {
-      alert(`${currentMatch} = Computer Wins`);
-      cScore++;
-    }
-  }
-  //Check for Scissors
-  else {
-    if (cInput === "Paper") {
-      alert(`${currentMatch} = You Win`);
-      pScore++;
-    } else {
-      alert(`${currentMatch} = Computer Wins`);
-      cScore++;
-    }
-  }
-}
-
-function updateScore() {
-  document.getElementById("p-score").textContent = pScore;
-  document.getElementById("c-score").textContent = cScore;
-}
-
-function checkWinner() {
-  if (pScore === 5 || cScore === 5) {
-    const winner =
-      pScore === 5
-        ? "You win the game! Congratulations!"
-        : "Computer wins the game! Try again next time!";
-    alert(winner);
-    return true;
-  }
-  return false;
+} else {
+  alert("Better luck next time, buddy");
 }
