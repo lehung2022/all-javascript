@@ -8,8 +8,17 @@ while (myNumber < 51) {
 
 // Do not create an endless loop (but don't feel bad if you do..it happens)
 // Do While Loops
+let newNumber = 0;
+do {
+    console.log(newNumber);
+    newNumber = newNumber + 1;
+}
+while (newNumber <= 20);
 // The difference of a Do While Loop
 // For Loops
+for (let i = 0; i <= 20; i++) {
+    console.log(i); 
+}
 // Initialize the counter variable
 // Conditional statement
 // Increment the counter
