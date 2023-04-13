@@ -1,4 +1,4 @@
-function sum(a, b) {
-	return a * b/2;
+const toProperCase = (name) => {
+	return name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
 }
-console.log(sum(5, 6));
+console.log(toProperCase("December"));
