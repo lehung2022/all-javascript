@@ -1,16 +1,8 @@
-var x = 5;
-// let y = 6; 
-// const z = 8;
-// local scope. There are ... types of local scopes
-// first type
+// Arrays
+let myWeapons = ["nunchaku", "knives", "bo staff"];
 
-// second type
-function add() {
-	let z = 10;
-	console.log(x);
-	{
-		let y = 9;
-		console.log(y);
-	}
-}
-add();
+// shift will remove an element at the beginning of the array
+const extra = myWeapons.push("intervention bolt action rifle"); 
+console.log(myWeapons);
+// reference to any items in the array 
+console.log(myWeapons[3]);
