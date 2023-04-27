@@ -1,16 +1,30 @@
-// From chapter 18 forward, each lesson will be one branch
-class Car {
-    constructor(person, age) {
-        this.name = "Ferrari";
-        this.year = "2022";
-        this.person = person;
-        this.age = age;
-    }
-    sell() {
-        console.log(`sell a ${this.name} in the year of ${this.year} to this ${this.person}. That person is ${this.age} years old`); 
+const myWeapon = {
+    theName: "刀", 
+    durability: 80,
+    strength: 75,    
+    level: 50,
+    defense: 45,
+    weight: 20,
+};
+console.log(myWeapon);
+
+const mySelf = {
+    myName: "黎興",
+    hobbies: ["fighting", "learning to code", "sleep with pretty women", "lick their boobs"],
+    kick: function() {
+        console.log("kick their asses");
     }
 }
+console.log(mySelf.myName);
+console.log(mySelf.hobbies[0]);
+mySelf.kick();
+console.log(typeof mySelf);
 
-const myCar = new Car("Jerk", "40");
-myCar.person = "Bigger Jerk";
-myCar.sell();
+// send JSON here will convert the original object into a bunch of strings
+const sendJSON = JSON.stringify(mySelf);
+console.log(sendJSON);
+console.log(typeof sendJSON);
+// convert JSON here will convert the strings back to the original object
+const convertJSON = JSON.parse(sendJSON);
+console.log(convertJSON);
+console.log(convertJSON.myName);
