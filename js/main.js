@@ -1,30 +1,21 @@
-const myWeapon = {
-    theName: "刀", 
-    durability: 80,
-    strength: 75,    
-    level: 50,
-    defense: 45,
-    weight: 20,
-};
-console.log(myWeapon);
+"use strict"
+const makeErrors = () => {
+    let i = 1;
+    while(i <= 5) {
+        try {
+           if (i % 2 !== 0) {
+            throw new Error("Odd number")
+           } else {
+            console.log("Even number")
+           }
+        } catch (err) {
+            console.error(err.stack);
+        } finally {
+            console.log("finally, we have reached the end");
+            i++;
 
-const mySelf = {
-    myName: "黎興",
-    hobbies: ["fighting", "learning to code", "sleep with pretty women", "lick their boobs"],
-    kick: function() {
-        console.log("kick their asses");
+        }
     }
 }
-console.log(mySelf.myName);
-console.log(mySelf.hobbies[0]);
-mySelf.kick();
-console.log(typeof mySelf);
+makeErrors();
 
-// send JSON here will convert the original object into a bunch of strings
-const sendJSON = JSON.stringify(mySelf);
-console.log(sendJSON);
-console.log(typeof sendJSON);
-// convert JSON here will convert the strings back to the original object
-const convertJSON = JSON.parse(sendJSON);
-console.log(convertJSON);
-console.log(convertJSON.myName);
