@@ -1,15 +1,16 @@
-const nikoKatas = {
-    name: "二虎流",
-    firstForm: "操流型",
-    secondForm: "金剛型",
-    thirdForm: "火天型",
-    fourthForm: "水天型"
+// From chapter 18 forward, each lesson will be one branch
+class Car {
+    constructor(person, age) {
+        this.name = "Ferrari";
+        this.year = "2022";
+        this.person = person;
+        this.age = age;
+    }
+    sell() {
+        console.log(`sell a ${this.name} in the year of ${this.year} to this ${this.person}. That person is ${this.age} years old`); 
+    }
 }
 
-const {firstForm: myForm, name: myName} = nikoKatas;
-console.log(myForm);
-
-function fight({firstForm}) {
-    return `${firstForm} fight`;
-}
-console.log(fight(nikoKatas));
+const myCar = new Car("Jerk", "40");
+myCar.person = "Bigger Jerk";
+myCar.sell();
