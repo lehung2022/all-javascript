@@ -52,7 +52,7 @@ while (view2.lastChild) {
 const createDivs = (parent, iter) => {
     const newDiv = document.createElement("div");
     newDiv.textContent = iter;
-    newDiv.style.backgroundColor = "#90a2f4";
+    newDiv.style.backgroundColor = "#5d1dac";
     newDiv.style.width = "100px";
     newDiv.style.height = "100px";
     newDiv.style.display = "flex";
