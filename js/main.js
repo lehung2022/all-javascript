@@ -1,16 +1,23 @@
 // From chapter 18 forward, each lesson will be one branch
-class Car {
-    constructor(person, age) {
-        this.name = "Ferrari";
-        this.year = "2022";
-        this.person = person;
-        this.age = age;
+class Pizza {
+    constructor(pizzaType, pizzaSize) {
+        this.type = pizzaType;
+        this.size = pizzaSize;
+        this.crust = "original";
     }
-    sell() {
-        console.log(`sell a ${this.name} in the year of ${this.year} to this ${this.person}. That person is ${this.age} years old`); 
+
+    get pizzaCrust() {
+        return this.crust;
+    }
+    set pizzaCrust(pizzaCrust) {
+        this.crust = pizzaCrust;
+    }
+
+    baked() {
+        console.log(`baking a ${this.size} ${this.type} ${this.crust} pizza`);
     }
 }
-
-const myCar = new Car("Jerk", "40");
-myCar.person = "Bigger Jerk";
-myCar.sell();
+const myPizza = new Pizza("pepperoni", "small");
+myPizza.pizzaCrust = "extra large";
+myPizza.baked();
+console.log(myPizza.type);
