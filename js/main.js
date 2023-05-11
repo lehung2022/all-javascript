@@ -22,7 +22,7 @@ const sameDivs = document.getElementsByTagName("div");
 const moreDivs = view1.querySelectorAll("div:nth-of-type(2n)");
 // (13:05) Modifying CSS with a DOM selector
 for (let i = 0; i < moreDivs.length; i++) {
-    moreDivs[i].style.backgroundColor = "#6feb4c";
+    moreDivs[i].style.backgroundColor = "#0d8926";
 }
 
 
@@ -52,7 +52,7 @@ while (view2.lastChild) {
 const createDivs = (parent, iter) => {
     const newDiv = document.createElement("div");
     newDiv.textContent = iter;
-    newDiv.style.backgroundColor = "#5d1dac";
+    newDiv.style.backgroundColor = "#0d8926";
     newDiv.style.width = "100px";
     newDiv.style.height = "100px";
     newDiv.style.display = "flex";
