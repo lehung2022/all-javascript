@@ -1,4 +1,4 @@
-// From chapter 18 forward, each lesson will be one branch
+// From chapter 18 forward, each lesson will be one branch. I am not done with this chapter yet.
 class Pizza {
     constructor(pizzaType, pizzaSize) {
         this.type = pizzaType;
